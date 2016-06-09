@@ -1,8 +1,9 @@
 ﻿using System;
+using Twitter;
 
-namespace Twitter
+namespace ConsoleApplication1
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -11,12 +12,12 @@ namespace Twitter
                 OAuthConsumerKey = "<OAuth Consumer Key>",
                 OAuthConsumerSecret = "<OAuth Consumer Secret>"
             };
-            
+
             var tweets = stream.GetTweets("twitterUserName", 10).Result;
-            
+
             foreach (var tweet in tweets)
             {
-                Console.WriteLine(tweet+"\n");
+                Console.WriteLine(tweet + "\n");
             }
             Console.ReadKey();
         }
